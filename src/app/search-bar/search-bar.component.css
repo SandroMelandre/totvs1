@@ -1,0 +1,128 @@
+.main-header {
+    background-color:#4375de;
+    min-height: 300px;;
+}
+
+.header-logo {
+    margin: 50px;
+    width: 180px;
+}
+.header-search-input{
+    height: 50px;
+}
+.header-search-spiner {
+    border: 1px solid;
+}
+
+
+.center-block {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: 30px auto;
+}
+
+.center-block-spiner {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: 11% auto;
+}
+.movie-container {
+    margin: 30px 0;
+    max-height: 850px;
+    overflow: hidden;
+
+ 
+}
+
+  .movie-card {
+    background: #ffffff;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    max-width: 315px;
+    margin: 2em;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  .movie-header {
+    padding: 0;
+    margin: 0;
+    height: 367px;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .header-icon {
+    width: 100%;
+    height: 367px;
+    line-height: 367px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 54px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+    opacity: .85;
+  }
+  .info-section span {
+    font-weight: 700;
+    font-size: 11px;
+   
+}
+  .movie-title {
+    font-size: 3em;
+    margin: 0;
+    display: table-cell;
+  }
+
+  .card-header{
+    background-color: #fff;
+    border-bottom: none;
+
+  }
+  .card-header .fa {
+    transition: .3s transform ease-in-out;
+  }
+  .card-body {
+    height: auto;
+    overflow: hidden;
+    transition: height 250ms;
+    -moz-transition: height 250ms;
+    /* Firefox 4 */
+    -webkit-transition: height 250ms;
+    /* Safari and Chrome */
+    -o-transition: height 250ms;
+    /* Opera */
+
+  }
+  .card-header .collapsed .fa {
+    transform: rotate(90deg);
+  }
+  .something-else .fa {
+    transition: .3s transform ease-in-out;
+  }
+  .something-else .collapsed .fa {
+    transform: rotate(-90deg);
+  }
+  .list .fa {
+    transition: .3s transform ease-in-out;
+  }
+  .list .collapsed .fa {
+    transform: rotate(90deg);
+  }
+  
+
+  @media only screen and (device-width: 575px),
+       only screen and (max-width: 575px) {
+         .movie-container{
+           margin: 30px 15%; 
+         }
+    }
+/* CSS */

@@ -1,0 +1,55 @@
+<div class="container-full main-header" style="text-align:center">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img class='header-logo' src="../../assets/logo.png" alt="totvs">
+                    <div class="col-10 center-block">
+                        <input type="text" #movieSearchInput class="form-control header-search-input" placeholder="Pesquise o filme ..." />
+                    </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="isSearching">
+            <div class="col-12 text-center  center-block-spiner"><h6>pesquisando ... </h6></div>
+        </div>
+</div>
+        <div class="row">
+            <ng-container *ngIf="apiResponse['Response'] == 'False'; else elseTemplate">
+                <div class="col-12 text-center">
+                    <div class="alert alert-danger" role="alert">{{apiResponse['Error']}}</div>
+                </div>
+            </ng-container>
+
+            <ng-template #elseTemplate>
+                <div class="  col-xs-12 col-sm-6 col-md-3 movie-container row" *ngFor="let movie of apiResponse['Search']">
+                    <div class="card movie-card" style="margin:5px;">
+                        <img class="card-img-top" src="{{movie['Poster']}}">
+                       
+                        <div class="card-body card-header collapse show" [id]="'mov' + movie['imdbID']"  [attr.data-parent]="'#mov'+movie['imdbID']" >
+                            <h5 class="card-title">{{movie['Title']}}</h5>
+                            <p class="card-text">Year: {{movie['Year']}}</p>
+                            <p> imdb : {{ movie['imdbID'] }}</p>
+                        </div>
+                        
+                        <!-- collaps -->
+                        <div>
+                            <p class="info-section" >
+                                <span data-toggle="collapse" [attr.href]="'#mov'+ movie['imdbID']"  role="button" aria-expanded="false" aria-controls="movie + movie['imdbID']" [attr.data-target]="'#mov'+movie['imdbID']">
+                                Saiba Mais  ....
+                                    <i class="fa fa-chevron-down pull-right"></i> 
+                               </span>
+                            </p>
+                          
+                        
+                        <div class="collapse"   [id]="'mov' + movie['imdbID']" aria-labelledby="" [attr.data-parent]="'#mov'+movie['imdbID']">
+                            <div class="card card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </div>
+                        </div>
+      
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+      </ng-template>
+        </div>
+      
